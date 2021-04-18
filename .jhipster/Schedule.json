@@ -1,0 +1,38 @@
+{
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "dateTime",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "availableSlots",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipId": 2,
+      "relationshipName": "schLoc",
+      "relationshipType": "many-to-one",
+      "otherEntityName": "location",
+      "otherEntityField": "branchName"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "schClass",
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fitnessClass",
+      "otherEntityField": "className"
+    }
+  ],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "pagination",
+  "name": "Schedule",
+  "changelogDate": "20210417094251"
+}
